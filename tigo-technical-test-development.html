@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#test").click(function () {
+                alert("The paragraph was clicked.");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://reqres.in/api/users",
+                success: success
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "https://reqres.in/api/users",
+                data: {
+                    "name": "morpheus",
+                    "job": "leader"
+                },
+                success: success,
+                dataType: "JSON"
+            });
+
+            $.ajax({
+                type: "PUT",
+                url: "https://reqres.in/api/users",
+                data: {
+                    "name": "morpheus",
+                    "job": "leader"
+                },
+                success: success,
+                dataType: "JSON"
+            });
+
+            $.ajax({
+                type: "DELETE",
+                url: "https://reqres.in/api/users/2",
+                success: success,
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
